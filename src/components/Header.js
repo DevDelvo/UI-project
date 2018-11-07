@@ -16,9 +16,6 @@ export default (props) => {
   const { visible, handleShowClick } = props;
   return (
     <Menu style={styles.largeMenu} size={'large'}>
-      {/* <Menu.Menu style={styles.drawerButton}>
-        <Menu.Item><Icon name="bars" /></Menu.Item>
-      </Menu.Menu> */}
       <Button.Group>
         <Button disabled={visible} onClick={handleShowClick}>
           <Icon name="bars" />

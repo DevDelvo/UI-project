@@ -1,6 +1,7 @@
 import React from 'react';
 import {Container, Menu, Icon, Sidebar} from 'semantic-ui-react';
 import Header from './Header';
+import SidebarMenu from './SidebarMenu';
 
 // export default props => {
 //   return (
@@ -34,7 +35,7 @@ class Layout extends React.Component {
     return (
       <Container>
 
-        <Sidebar
+        {/* <Sidebar
             as={Menu}
             animation='overlay'
             icon='labeled'
@@ -56,7 +57,8 @@ class Layout extends React.Component {
               <Icon name='camera' />
               Channels
             </Menu.Item>
-          </Sidebar>
+          </Sidebar> */}
+        <SidebarMenu sidebarVisible={sidebarVisible} handleSidebarHide={this.handleSidebarHide} />
 
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"></link>
         <Header visible={sidebarVisible} handleShowClick={this.handleShowClick}/>

@@ -20,12 +20,10 @@ export default (props) => {
               Home
             </Menu.Item>
             <Menu.Item as='a'>
-              <Icon name='gamepad' />
-              Games
+              Stuff
             </Menu.Item>
             <Menu.Item as='a'>
-              <Icon name='camera' />
-              Channels
+              More Stuff
             </Menu.Item>
 
           </Sidebar>

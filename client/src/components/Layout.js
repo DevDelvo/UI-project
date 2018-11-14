@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Menu, Icon, Sidebar} from 'semantic-ui-react';
+import { Container, Segment, Sidebar } from 'semantic-ui-react';
 import Header from './Header';
 import SidebarMenu from './SidebarMenu';
 
@@ -24,13 +24,13 @@ class Layout extends React.Component {
     const props = this.props;
     return (
       <Container>
-
         <SidebarMenu sidebarVisible={sidebarVisible} handleSidebarHide={this.handleSidebarHide} />
 
-        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"></link>
-        <Header visible={sidebarVisible} handleShowClick={this.handleShowClick}/>
-        {props.children}
-
+        <Sidebar.Pusher dimmed={sidebarVisible}>
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css"></link>
+          <Header visible={sidebarVisible} handleShowClick={this.handleShowClick}/>
+          {props.children}
+        </Sidebar.Pusher>
       </Container>
     );
   };

@@ -12,6 +12,16 @@ export default (props) => {
     },
     drawerButton: {
       margin: "0px",
+    },
+    projectHeaderTitle: {
+      alignSelf: "center",
+    },
+    spacer: {
+      flex: 1,
+      flexBasis: '0.000000001px',
+    },
+    dropDown: {
+      width: '50px',
     }
   }
   const { visible, handleShowClick } = props;
@@ -24,11 +34,14 @@ export default (props) => {
       </Button.Group>
 
       <Menu.Item><Link to='/'>Azure UI</Link></Menu.Item>
-      <Menu.Menu position="right">
-        <Menu.Item><Link to='/helloworld'><Icon name='tasks' />Hello World!</Link></Menu.Item>
-      </Menu.Menu>
+      <div style={styles.projectHeaderTitle}>UI Demo</div>
 
-      <MenuDropdown />
+      <div style={styles.spacer}></div>
+      {/* <Menu.Menu position="right"> */}
+        <Menu.Item><Link to='/helloworld'><Icon name='tasks' />Hello World!</Link></Menu.Item>
+      {/* </Menu.Menu> */}
+
+      <MenuDropdown styles={styles.dropDown}/>
     </Menu>
   );
 };

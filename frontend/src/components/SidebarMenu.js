@@ -15,17 +15,16 @@ export default (props) => {
             visible={sidebarVisible}
             width='thin'
           >
-            <Menu.Item as='a'>
-              <Icon name='home' />
-              Home
-            </Menu.Item>
-            <Menu.Item as='a'>
-              Stuff
-            </Menu.Item>
-            <Menu.Item as='a'>
-              More Stuff
-            </Menu.Item>
-
-          </Sidebar>
+          <Menu.Item as='a'>
+            <Link to="/"><Icon name='home' />Azure UI</Link>
+          </Menu.Item>
+          <Menu.Item as='a'>
+            <Link to="/helloworld">Hello World!</Link>
+          </Menu.Item>
+          <Menu.Item as='a'>
+            {/* <Link to="/contracts"></Link> */}
+            Contracts
+          </Menu.Item>
+        </Sidebar>
     )
 }

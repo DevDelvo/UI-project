@@ -27,20 +27,14 @@ export default (props) => {
   const { visible, handleShowClick } = props;
   return (
     <Menu style={styles.largeMenu} size={'large'}>
+    <Menu.Item><Link to='/'>Azure UI</Link></Menu.Item>
       <Button.Group>
         <Button disabled={visible} onClick={handleShowClick}>
           <Icon name="bars" />
         </Button>
       </Button.Group>
-
-      <Menu.Item><Link to='/'>Azure UI</Link></Menu.Item>
       <div style={styles.projectHeaderTitle}>UI Demo</div>
-
       <div style={styles.spacer}></div>
-      {/* <Menu.Menu position="right"> */}
-        <Menu.Item><Link to='/helloworld'><Icon name='tasks' />Hello World!</Link></Menu.Item>
-      {/* </Menu.Menu> */}
-
       <MenuDropdown styles={styles.dropDown}/>
     </Menu>
   );

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import {Loader, Dimmer} from 'semantic-ui-react';
-//import {Link} from 'react-router-dom';
+import SubmitForm from './SubmitForm'
+// import {Link} from 'react-router-dom';
 
 class Home extends Component {
     state = {
-    loadingData:false,
+    loadingData: false,
   }
 
   async componentDidMount(){
@@ -14,7 +15,7 @@ class Home extends Component {
   }
 
   render() {
-    if(this.state.loadingData){
+    if (this.state.loadingData) {
       return (
         <Dimmer active inverted>
         <Loader size='massive'>Loading...</Loader>
@@ -25,6 +26,7 @@ class Home extends Component {
     return (
       <div>
         <h1>Hi There!</h1>
+        <SubmitForm />
       </div>
     );
   }

@@ -11,6 +11,7 @@ class App extends Component {
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
+            {/* <Route exact path="/:chainAddress" component={Home} /> */}
             <Route exact path="/helloworld" component={HelloWorld} />
           </Switch>
         </Layout>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import {Loader, Dimmer, Form, Input, Message, Button, Card, Modal, Grid, Icon} from 'semantic-ui-react';
+import {Loader, Dimmer, Message, Card, Grid} from 'semantic-ui-react';
 import web3 from '../ethereum/web3';
 //import {SupplyChainInstance} from '../ethereum/contractInstance';
 import {FactoryInstance} from '../ethereum/factoryInstance';
+import SubmitForm from './SubmitForm';
 
 class Factory extends Component {
   state = {
@@ -76,40 +77,15 @@ class Factory extends Component {
       <div>
       <h1>Deployed Supplychain Transportation Contracts</h1>
       <Grid stackable>
-      <Grid.Column width={12}>
-      {this.state.deployedChains.length>0 && this.renderChains()}
-      {this.state.deployedChains.length===0 && <p>No contracts deployed!</p>}
-      </Grid.Column>
-      <Grid.Column width={4}>
-      <Grid.Row>
-      <Modal trigger={<Button primary icon labelPosition='right'><Icon name='plus circle' />Create New Contract</Button>}>
-      <Modal.Header>Supplychain Transportation Factory</Modal.Header>
-      <Modal.Content>
-      <Form onSubmit={this.onSubmit} error={!!this.state.errorMessage}>
-      <Form.Field>
-      <label>Description</label>
-      <Input onChange={event => this.setState({description:event.target.value})} />
-      </Form.Field>
-      <Form.Field>
-      <label>Freight Carrier Address</label>
-      <Input onChange={event => this.setState({freightCarrierAddress:event.target.value})} />
-      </Form.Field>
-      <Form.Field>
-      <label>Oigin Customs Address</label>
-      <Input onChange={event => this.setState({originCustomsAddress:event.target.value})} />
-      </Form.Field>
-      <Form.Field>
-      <label>Consignee Address</label>
-      <Input onChange={event => this.setState({consigneeAddress:event.target.value})} />
-      </Form.Field>
-      <Button loading={this.state.loading} primary basic type='submit'>Deploy</Button>
-      <Message error header="Oops!" content={this.state.errorMessage} />
-      {statusMessage}
-      </Form>
-      </Modal.Content>
-      </Modal>
-      </Grid.Row>
-      </Grid.Column>
+        <Grid.Column width={12}>
+          {this.state.deployedChains.length>0 && this.renderChains()}
+          {this.state.deployedChains.length===0 && <p>No contracts deployed!</p>}
+          </Grid.Column>
+          <Grid.Column width={4}>
+          <Grid.Row>
+            <SubmitForm />
+          </Grid.Row>
+        </Grid.Column>
       </Grid>
       </div>
       );

@@ -30,7 +30,7 @@ class Home extends Component {
   }
 
   render() {
-    if(this.state.loadingData){
+    if (this.state.loadingData) {
       return (
         <Dimmer active inverted>
         <Loader size='massive'>Loading...</Loader>

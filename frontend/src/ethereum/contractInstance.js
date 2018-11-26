@@ -12,5 +12,5 @@ export const helloWorldInstance = new web3.eth.Contract(PostBox.abi, "0x7d0a7af7
 //export const SupplyChainInstance = new web3.eth.Contract(SupplyChainTransportation.abi, "0xbc99706eb7bcf79f2af24b784ce501ad4bd91399"); // No Factory; state=1; Export Clearance
 
 export const SupplyChainInstance = (address) => {
-	return new web3.eth.Contract(SupplyChainTransportation.abi, address); // With Facotry
+	return new web3.eth.Contract(SupplyChainTransportation.abi, address); // With Factory
 }

@@ -23,7 +23,8 @@ export default class SubmitForm extends Component {
         event.preventDefault();
         this.setState({errorMessage:'', loadingData:true, msg:''});
         try {
-          const {description, freightCarrierAddress, originCustomsAddress, consigneeAddress, account} = this.state;
+          const {description, freightCarrierAddress, originCustomsAddress, consigneeAddress } = this.state;
+          const { account } = this.props;
           const deployedAddress = await FactoryInstance.methods.createSupplyChain(description, freightCarrierAddress, originCustomsAddress, consigneeAddress).send({from:account});
           console.log(deployedAddress);
           this.setState({msg:'Contract deployed successfully!'});
@@ -38,11 +39,6 @@ export default class SubmitForm extends Component {
         const { msg,
                 errorMessage,
                 loadingData,
-                account,
-                description,
-                freightCarrierAddress,
-                originCustomsAddress,
-                consigneeAddress
         } = this.state;
 
         let statusMessage;
@@ -66,7 +62,7 @@ export default class SubmitForm extends Component {
                         <Input name="freightCarrierAddress" onChange={this.handleChange} />
                     </Form.Field>
                     <Form.Field>
-                        <label>Oigin Customs Address</label>
+                        <label>Origin Customs Address</label>
                         <Input name="originCustomsAddress"onChange={this.handleChange} />
                     </Form.Field>
                     <Form.Field>

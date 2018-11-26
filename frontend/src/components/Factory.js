@@ -58,6 +58,7 @@ class Factory extends Component {
   }
 
   render() {
+    const { account } = this.state;
     if(this.state.loadingData){
       return (
         <Dimmer active inverted>
@@ -65,14 +66,6 @@ class Factory extends Component {
         </Dimmer>
         );
     }
-
-    let statusMessage;
-    if (this.state.msg === ''){
-      statusMessage = null;
-    }else{
-      statusMessage = <Message floating positive header="Success!" content={this.state.msg} />;
-    }
-
     return (
       <div>
       <h1>Deployed Supplychain Transportation Contracts</h1>
@@ -83,7 +76,7 @@ class Factory extends Component {
           </Grid.Column>
           <Grid.Column width={4}>
           <Grid.Row>
-            <SubmitForm />
+            <SubmitForm account={account} />
           </Grid.Row>
         </Grid.Column>
       </Grid>
